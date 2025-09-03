@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../dist/out-tsc",
+    "module": "NodeNext",                      // يجب أن يكون NodeNext
+    "moduleResolution": "NodeNext",            // تأكد من أن هذا مضبوط على NodeNext
+    "target": "es2021",                        // يمكنك تركه كما هو، أو تغييره إلى esNext إذا رغبت
+    "emitDecoratorMetadata": true,             // تأكد من تفعيل هذه
+    "experimentalDecorators": true,            // تأكد من تفعيل هذه أيضا
+    "types": ["node"],
+    "rootDir": "../../"
+  },
+  "references": [
+    {
+      "path": "../shared-types"
+    }
+  ],
+  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
+  "include": [
+    "src/**/*.ts",
+    "../../shared-types/src/**/*.ts"
+  ]
+}
