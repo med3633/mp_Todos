@@ -1,32 +1,20 @@
-import { useEffect, useState} from 'react';
+import { useCallback, useEffect, useState} from 'react';
 import axios from 'axios';
 import { Todo } from '@mp-hr/shared-types';
 export function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
+  const getTodos = useCallback(async () => {
+    const resp = await axios.get<Todo[]>('http://localhost:3000/api');
+    setTodos(resp.data);
+  }, []);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios('http://localhost:3000/api');
-      setTodos(result.data.todos);
-    };
-    fetchData();
+    getTodos()
   }, []);
 
   return (
     <div>
-      <h1>Todo List</h1>
-      <ul>
-        {todos.map(todo => (
-          <li key={todo.id}>
-            {todo.title}
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => handleToggle(todo.id)}
-            />
-          </li>
-        ))}
-      </ul>
+      {JSON.stringify(todos)}
     </div>
   );
 }
