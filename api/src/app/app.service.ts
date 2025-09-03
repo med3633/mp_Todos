@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Todo } from '@mp-hr/shared-types';
+import { Todo } from '../../../dist/shared-types/src';
 //create interface
 // interface Todo {
 //   id: number;

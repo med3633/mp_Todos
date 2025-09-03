@@ -1,1 +1,1 @@
-export type { Todo } from './lib/shared-types.js';
+export type { Todo } from './lib/shared-types';

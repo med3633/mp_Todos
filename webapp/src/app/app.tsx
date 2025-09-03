@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState, useRef} from 'react';
 import axios from 'axios';
-import { Todo } from '@mp-hr/shared-types';
+import { Todo } from '../../../shared-types/src';
 import { get } from 'node_modules/axios/index.cjs';
 export function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
