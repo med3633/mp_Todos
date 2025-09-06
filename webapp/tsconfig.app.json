@@ -14,6 +14,9 @@
   "references": [
     {
       "path": "../shared-types"
+    },
+    {
+      "path": "../data-access"
     }
   ],
   "exclude": [
@@ -31,6 +34,8 @@
     "src/**/*.jsx", 
     "src/**/*.ts", 
     "src/**/*.tsx",
-    "../../shared-types/src/**/*.ts"
+    "../../shared-types/src/**/*.ts",
+    "../../data-access/src/**/*.ts",
+    "../../data-access/src/**/*.tsx"
   ]
 }
