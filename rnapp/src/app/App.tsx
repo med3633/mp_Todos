@@ -11,7 +11,7 @@ import {
   Switch
 } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
-import { useTodos } from '@mp-hr/data-access';
+import { useTodos } from '../hooks/useTodos';
 
 const App = () => {
   const { todos, addTodo, toggleTodo } = useTodos();
