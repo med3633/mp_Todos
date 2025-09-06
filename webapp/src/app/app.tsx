@@ -1,16 +1,16 @@
-import { useRef} from 'react';
+import { useCallback, useRef} from 'react';
 import { useTodos } from '@mp-hr/data-access';
 
 export function App() {
   const { todos, addTodo, toggleTodo } = useTodos();
   const textInputRef = useRef<HTMLInputElement>(null);
 
-  const handleAddTodo = () => {
-    if (textInputRef.current && textInputRef.current.value.trim()) {
-      addTodo(textInputRef.current.value);
+  const handleAddTodo =useCallback (async () => {
+    if (textInputRef.current ) {
+     await addTodo(textInputRef.current.value);
       textInputRef.current.value = '';
     }
-  };
+  }, [addTodo]);
 
   return (
     <div>
