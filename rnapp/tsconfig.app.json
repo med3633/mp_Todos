@@ -2,8 +2,17 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../dist/out-tsc",
-    "types": ["node"]
+    "types": ["node"],
+    "rootDir": "../"
   },
+  "references": [
+    {
+      "path": "../shared-types"
+    },
+    {
+      "path": "../data-access"
+    }
+  ],
   "files": ["../node_modules/@nx/react-native/typings/svg.d.ts"],
   "exclude": [
     "jest.config.ts",
@@ -11,5 +20,13 @@
     "src/**/*.spec.tsx",
     "src/test-setup.ts"
   ],
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"]
+  "include": [
+    "src/**/*.ts", 
+    "src/**/*.tsx", 
+    "src/**/*.js", 
+    "src/**/*.jsx",
+    "../shared-types/src/**/*.ts",
+    "../data-access/src/**/*.ts",
+    "../data-access/src/**/*.tsx"
+  ]
 }
