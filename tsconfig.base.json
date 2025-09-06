@@ -19,6 +19,7 @@
     "customConditions": ["development"],
     "baseUrl": ".",
     "paths": {
+      "@mp-hr/data-access": ["data-access/src/index.ts"],
       "@mp-hr/shared-types": ["shared-types/src/index.ts"]
     }
   }
